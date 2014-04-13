@@ -30,7 +30,7 @@ public class SetHomeCommand implements CommandExecutor {
             sender.sendMessage(ChatColor.RED + "Too many parameters were entered!");
             return true;
         } else if (args.length == 0) {
-            String name = "%&%&defaulthome&%&%""
+            String name = "%&%&defaulthome&%&%"";
             return false;
         } else
             String name = args[0];
