@@ -1,4 +1,3 @@
-
 package com.dinnerbone.bukkit.home.commands;
 
 import com.dinnerbone.bukkit.home.Home;
@@ -38,8 +37,11 @@ public class ListHomesCommand implements CommandExecutor {
                 if (result.length() > 0) {
                     result += ", ";
                 }
-
+                if home.getName() = "%&%&defaulthome&%&%";
+                {
+                } else {
                 result += home.getName();
+                }
             }
 
             sender.sendMessage("All home(s): " + result);
