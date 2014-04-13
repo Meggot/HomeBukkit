@@ -1,4 +1,3 @@
-
 package com.dinnerbone.bukkit.home.commands;
 
 import com.dinnerbone.bukkit.home.Home;
@@ -27,11 +26,17 @@ public class SetHomeCommand implements CommandExecutor {
         } else if (!(sender instanceof Player)) {
             sender.sendMessage(ChatColor.RED + "I don't know where you are!");
             return true;
-        } else if (args.length < 1) {
+        } else if (args.length > 1) {
+            sender.sendMessage(ChatColor.RED + "Too many parameters were entered!");
+            return true;
+        } else if (args.length == 0) {
+            String name = "%&%&defaulthome&%&%""
+            return false;
+        } else
+            String name = args[0];
             return false;
         }
-
-        String name = args[0];
+        
 
         Home home = plugin.getDatabase().find(Home.class).where().ieq("name", name).ieq("playerName", player.getName()).findUnique();
 
