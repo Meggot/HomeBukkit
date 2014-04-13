@@ -1,4 +1,3 @@
-
 package com.dinnerbone.bukkit.home.commands;
 
 import com.dinnerbone.bukkit.home.Home;
@@ -20,18 +19,18 @@ public class GoHomeCommand implements CommandExecutor {
         Player player = HomeBukkit.getPlayer(sender, args, 1);
 
         if (player == null) {
-            return true;
+              return true;
         } else if ((player != sender) && (!sender.isOp())) {
             sender.sendMessage(ChatColor.RED + "You don't have permission to go to other players homes");
-            return true;
+             return true;
         } else if (!(sender instanceof Player)) {
             sender.sendMessage(ChatColor.RED + "I don't know how to move you!");
-            return true;
+             return true;
         } else if (args.length < 1) {
-            return false;
+             String name = "%&%&defaulthome&%&%";
+        } else {
+             String name = args[0];
         }
-
-        String name = args[0];
 
         Home home = plugin.getDatabase().find(Home.class).where().ieq("name", name).ieq("playerName", player.getName()).findUnique();
 
